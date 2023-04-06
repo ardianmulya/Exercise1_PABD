@@ -76,5 +76,20 @@ namespace Exercise1_PABD
             }
             r.Close();
         }
+
+        public void update(string id_pembeli, string nama_pembeli, string alamat, SqlConnection con)
+        {
+            string str = "";
+            str = "Update pembeli set nama_pembeli = @nama, alamat = @alamat where id_pembeli = @id";
+            SqlCommand cmd = new SqlCommand(str, con);
+            cmd.CommandType = CommandType.Text;
+
+            cmd.Parameters.Add(new SqlParameter("id", id_pembeli));
+            cmd.Parameters.Add(new SqlParameter("nama", nama_pembeli));
+            cmd.Parameters.Add(new SqlParameter("alamat", alamat));
+            cmd.ExecuteNonQuery();
+            Console.WriteLine("Data Berhasil ditambahkan");
+        }
+
     }
 }
