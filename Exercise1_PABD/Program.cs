@@ -13,7 +13,29 @@ namespace Exercise1_PABD
         static void Main(string[] args)
         {
             Program pr = new Program();
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("Koneksi ke Database\n");
+                    Console.WriteLine("Masukan User ID : ");
+                    string user = Console.ReadLine();
+                    Console.WriteLine("Masukan password : ");
+                    string pass = Console.ReadLine();
+                    Console.WriteLine("Masukan database tujuan : ");
+                    string db = Console.ReadLine();
+                    Console.WriteLine("\nketik y ntuk terhubung ke database : ");
+                    char chr = Convert.ToChar(Console.ReadLine());
+                    switch (chr)
+                    {
 
+                    }
+                }
+                catch
+                {
+
+                }
+            }
         }
 
         public void baca(SqlConnection con)
