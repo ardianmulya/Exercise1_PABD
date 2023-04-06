@@ -55,5 +55,26 @@ namespace Exercise1_PABD
             cmd.ExecuteNonQuery();
             Console.WriteLine("Data Berhasil dihapus");
         }
+
+        public void search(string id_pembeli, SqlConnection con)
+        {
+            string str = "";
+            str = "select * from pembeli where id_pembeli = @id ";
+            SqlCommand cmd = new SqlCommand(str, con);
+            cmd.CommandType = CommandType.Text;
+
+            cmd.Parameters.Add(new SqlParameter("id", id_pembeli));
+            SqlDataReader r = cmd.ExecuteReader();
+            Console.WriteLine("Data Berhasil dicari");
+            while (r.Read())
+            {
+                for (int i = 0; i < r.FieldCount; i++)
+                {
+                    Console.WriteLine(r.GetValue(i));
+                }
+                Console.WriteLine();
+            }
+            r.Close();
+        }
     }
 }
