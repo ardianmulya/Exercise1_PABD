@@ -43,5 +43,17 @@ namespace Exercise1_PABD
             cmd.ExecuteNonQuery();
             Console.WriteLine("Data Berhasil ditambahkan");
         }
+
+        public void delete(string id_pembeli, SqlConnection con)
+        {
+            string str = "";
+            str = "delete from pembeli where id_pembeli = @id ";
+            SqlCommand cmd = new SqlCommand(str, con);
+            cmd.CommandType = CommandType.Text;
+
+            cmd.Parameters.Add(new SqlParameter("id", id_pembeli));
+            cmd.ExecuteNonQuery();
+            Console.WriteLine("Data Berhasil dihapus");
+        }
     }
 }
