@@ -12,6 +12,7 @@ namespace Exercise1_PABD
     {
         static void Main(string[] args)
         {
+            
             Program pr = new Program();
             while (true)
             {
@@ -47,9 +48,10 @@ namespace Exercise1_PABD
                                         Console.WriteLine("\nMenu");
                                         Console.WriteLine("1. Melihat Seluruh Data");
                                         Console.WriteLine("2. tambah Data");
-                                        Console.WriteLine("3. Keluar");
-                                        Console.WriteLine("4. Delete");
-                                        Console.WriteLine("5. Search");
+                                        Console.WriteLine("3. Delete");
+                                        Console.WriteLine("4. Search");
+                                        Console.WriteLine("5. Update");
+                                        Console.WriteLine("5. Keluar");
                                         Console.Write("\nEnter your choice (1-3): ");
                                         char ch = Convert.ToChar(Console.ReadLine());
                                         switch (ch)
@@ -144,6 +146,11 @@ namespace Exercise1_PABD
 
                                                     pr.update(id_pembeli, Nama, Alamat, conn);
 
+                                                }
+                                                break;
+                                            case '6':
+                                                {
+                                                    return;
                                                 }
                                                 break;
                                             default:
